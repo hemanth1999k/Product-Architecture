@@ -4,9 +4,9 @@
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 ![Language](https://img.shields.io/badge/language-System%20Design-orange?style=for-the-badge)
 
-> 🎯 **A comprehensive system design study guide for building a coding platform like LeetCode**
+> **A comprehensive system design study guide for building a coding platform like LeetCode**
 
-## 📋 Problem Statement
+## Whats the Problem?
 
 Design a scalable coding platform similar to LeetCode that allows users to:
 - Browse and solve coding problems
@@ -17,7 +17,7 @@ Design a scalable coding platform similar to LeetCode that allows users to:
 
 **Scale**: Support 10M+ users, 1M+ daily active users, handling 10K+ code submissions per minute.
 
-## ✅ Functional Requirements
+## Functional Requirements we are aiming for
 
 ### In Scope
 - **Problem Management**: Browse, search, and filter coding problems by difficulty, topic, company
@@ -28,24 +28,24 @@ Design a scalable coding platform similar to LeetCode that allows users to:
 - **Discussion Forums**: Problem-specific discussion threads
 - **Contest System**: Timed coding competitions
 
-### Out of Scope
+### Out of Scope for this question
 - Video tutorials or educational content
 - Premium subscription billing
 - Mobile app development
 - Advanced IDE features (debugging, autocomplete)
 
-## 🎯 Non-Functional Requirements
+## Non Functional Requirements we are aiming for
 
 | Requirement | Target | Notes |
 |-------------|--------|-------|
-| **Availability** | 99.9% | 👉 Availability > Consistency for better UX |
+| **Availability** | 99.9% | Availability > Consistency for better UX |
 | **Latency** | <200ms API, <5s code execution | Fast feedback loops crucial |
 | **Throughput** | 10K submissions/min peak | Handle contest traffic spikes |
 | **Consistency** | Eventually consistent | Leaderboards can have slight delays |
-| **Security** | 🔒 Sandbox isolation | Prevent malicious code execution |
+| **Security** | Sandbox isolation | Prevent malicious code execution |
 | **Scalability** | 10x growth capacity | Auto-scaling architecture |
 
-## 🏗️ Core Entities
+## Core Entities
 
 ```mermaid
 erDiagram
@@ -108,7 +108,7 @@ erDiagram
     CONTEST ||--o{ PROBLEM : contains
 ```
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Problem Management
 ```http
@@ -146,15 +146,15 @@ POST   /api/v1/discussions                       # Create new discussion
 POST   /api/v1/discussions/{id}/vote             # Upvote/downvote
 ```
 
-## 🚀 System Walkthrough
+## System Walkthrough
 
 ### User Flow: Browse → Solve → Submit → Results
 
 ```mermaid
 flowchart TD
-    A([👤 User]) -->|1. Browse| B[🌐 Load Balancer]
-    B --> C[📡 API Server]
-    C -->|2. Query Problems| D[(📚 Problems DB)]
+    A([User]) -->|1. Browse| B[Load Balancer]
+    B --> C[API Server]
+    C -->|2. Query Problems| D[(Problems DB)]
     D -->|3. Return List| C
     C -->|4. Display| A
     
@@ -164,12 +164,12 @@ flowchart TD
     C -->|8. Show Problem| A
     
     A -->|9. Submit Code| C
-    C -->|10. Queue Job| E[⚡ Message Queue]
-    E -->|11. Process| F[🐳 Code Execution Service]
-    F -->|12. Run in Sandbox| G[🔒 Docker Container]
+    C -->|10. Queue Job| E[Message Queue]
+    E -->|11. Process| F[Code Execution Service]
+    F -->|12. Run in Sandbox| G[Docker Container]
     G -->|13. Results| F
-    F -->|14. Store Results| H[(💾 Submissions DB)]
-    F -->|15. Update Cache| I[🚀 Redis Cache]
+    F -->|14. Store Results| H[(Submissions DB)]
+    F -->|15. Update Cache| I[Redis Cache]
     
     F -->|16. Notify| C
     C -->|17. Real-time Update| A
@@ -178,41 +178,41 @@ flowchart TD
     style I fill:#00d4aa,stroke:#ffffff,stroke-width:2px,color:#ffffff
 ```
 
-### High-Level Architecture
+### High Level Architecture
 
 ```mermaid
 graph TB
-    subgraph "🌐 Client Layer"
-        WEB[🖥️ Web App]
-        MOBILE[📱 Mobile App]
+    subgraph "Client Layer"
+        WEB[Web App]
+        MOBILE[Mobile App]
     end
     
-    subgraph "🔀 Load Balancing"
+    subgraph "Load Balancing"
         LB[⚖️ Load Balancer<br/>nginx/ALB]
     end
     
-    subgraph "📡 API Layer"
-        API1[🔧 API Server 1]
-        API2[🔧 API Server 2]
-        API3[🔧 API Server 3]
+    subgraph "API Layer"
+        API1[API Server 1]
+        API2[API Server 2]
+        API3[API Server 3]
     end
     
     subgraph "⚡ Processing Layer"
-        QUEUE[📬 Message Queue<br/>RabbitMQ/SQS]
-        EXECUTOR[🏃‍♂️ Code Execution<br/>Service]
+        QUEUE[Message Queue<br/>RabbitMQ/SQS]
+        EXECUTOR[Code Execution<br/>Service]
     end
     
-    subgraph "🔒 Execution Environment"
-        DOCKER1[🐳 Docker Container]
-        DOCKER2[🐳 Docker Container]
-        DOCKER3[🐳 Docker Container]
+    subgraph "Execution Environment"
+        DOCKER1[Docker Container]
+        DOCKER2[Docker Container]
+        DOCKER3[Docker Container]
     end
     
-    subgraph "💾 Data Layer"
-        POSTGRES[(🐘 PostgreSQL<br/>Problems, Users)]
-        SUBMISSIONS[(📊 PostgreSQL<br/>Submissions)]
-        REDIS[🚀 Redis<br/>Cache & Sessions]
-        S3[☁️ S3<br/>Test Cases, Assets]
+    subgraph "Data Layer"
+        POSTGRES[(PostgreSQL<br/>Problems, Users)]
+        SUBMISSIONS[(PostgreSQL<br/>Submissions)]
+        REDIS[Redis<br/>Cache & Sessions]
+        S3[S3<br/>Test Cases, Assets]
     end
     
     WEB --> LB
@@ -249,13 +249,13 @@ graph TB
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#4ecdc4', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#34495e', 'lineColor': '#34495e', 'fontFamily': 'Virgil, Segoe UI Emoji'}}}%%
 sequenceDiagram
-    participant U as 👤 User
-    participant API as 📡 API Server
-    participant Q as ⚡ Queue
-    participant EX as 🏃‍♂️ Executor
-    participant DB as 💾 Database
-    participant C as 🚀 Cache
-    participant WS as 🔌 WebSocket
+    participant U as User
+    participant API as API Server
+    participant Q as Queue
+    participant EX as Executor
+    participant DB as Database
+    participant C as Cache
+    participant WS as WebSocket
     
     U->>+API: POST /submissions
     API->>+DB: Create submission record
@@ -268,9 +268,9 @@ sequenceDiagram
     U->>+WS: Subscribe to submission_id
     
     Q->>+EX: Process job
-    EX->>EX: 🔒 Create sandbox
-    EX->>EX: 🏃‍♂️ Execute code
-    EX->>EX: ✅ Validate output
+    EX->>EX: Create sandbox
+    EX->>EX: Execute code
+    EX->>EX: Validate output
     EX->>+DB: Update submission
     DB-->>-EX: Updated
     EX->>+C: Cache results
@@ -284,27 +284,27 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    subgraph "🎯 Leaderboard Request Flow"
-        A[👤 User Request] -->|1. GET /leaderboard| B[📡 API Server]
-        B -->|2. Check Cache| C{🚀 Redis Cache}
+    subgraph "Leaderboard Request Flow"
+        A[User Request] -->|1. GET /leaderboard| B[API Server]
+        B -->|2. Check Cache| C{Redis Cache}
         C -->|3a. Cache Hit| D[Return Cached Data]
-        C -->|3b. Cache Miss| E[📊 Calculate from DB]
+        C -->|3b. Cache Miss| E[Calculate from DB]
         E -->|4. Store in Cache| C
-        E -->|5. Return Fresh Data| F[📈 Leaderboard Response]
+        E -->|5. Return Fresh Data| F[Leaderboard Response]
         D --> F
     end
     
     subgraph "⚡ Background Updates"
-        G[🔄 Submission Event] -->|Update Score| H[🚀 Redis Sorted Set]
-        H -->|Increment Rank| I[📊 Leaderboard Sync]
-        I -->|Every 5min| J[♻️ Refresh Cache]
+        G[Submission Event] -->|Update Score| H[Redis Sorted Set]
+        H -->|Increment Rank| I[Leaderboard Sync]
+        I -->|Every 5min| J[♻Refresh Cache]
     end
     
     style C fill:#00d4aa,stroke:#ffffff,stroke-width:2px,color:#ffffff
     style H fill:#00d4aa,stroke:#ffffff,stroke-width:2px,color:#ffffff
 ```
 
-## 🔒 Security & Isolation
+## Security & Isolation
 
 ### Code Execution Sandbox
 - **Docker Containers**: Each submission runs in isolated containers
@@ -320,23 +320,23 @@ flowchart LR
 - **SQL Injection**: Parameterized queries, ORM usage
 - **CORS**: Restricted origins for web clients
 
-## 📈 Scaling Considerations
+## Scaling Considerations
 
 ### Database Scaling
 ```mermaid
 graph TB
-    subgraph "📊 Read Scaling"
-        MASTER[(🐘 Primary DB)]
-        REPLICA1[(📖 Read Replica 1)]
-        REPLICA2[(📖 Read Replica 2)]
-        REPLICA3[(📖 Read Replica 3)]
+    subgraph "Read Scaling"
+        MASTER[(Primary DB)]
+        REPLICA1[(Read Replica 1)]
+        REPLICA2[(Read Replica 2)]
+        REPLICA3[(Read Replica 3)]
     end
     
-    subgraph "📝 Write Operations"
+    subgraph "Write Operations"
         WRITE[Write Queries] --> MASTER
     end
     
-    subgraph "📖 Read Operations"
+    subgraph "Read Operations"
         READ[Read Queries] --> LB_DB[Load Balancer]
         LB_DB --> REPLICA1
         LB_DB --> REPLICA2
@@ -364,7 +364,7 @@ graph TB
 - **Connection Pooling**: Database and Redis connection pools
 - **Async Processing**: Non-blocking I/O for submission handling
 
-## 🔍 Potential Deep Dives
+## 🔍 How can we go deeper (Breadth vs Depth)
 
 ### 1. Contest System Architecture
 **Challenge**: Handle 100K+ concurrent users during contests
@@ -401,71 +401,7 @@ graph TB
 - User journey analytics
 - Performance bottleneck identification
 
----
-
-## 📁 Repository Structure
-
-```
-leetcode-system-design/
-├── 📖 README.md
-├── 📊 diagrams/
-│   ├── user-flow.mmd
-│   ├── architecture.mmd
-│   ├── submission-sequence.mmd
-│   └── leaderboard-caching.mmd
-├── 📚 docs/
-│   ├── functional-requirements.md
-│   ├── api-endpoints.md
-│   ├── security-model.md
-│   └── scaling-deep-dives.md
-├── 🏗️ architecture/
-│   ├── database-schema.sql
-│   ├── api-spec.yaml
-│   └── docker-compose.yml
-└── 🎨 assets/
-    ├── excalidraw-sketches.md
-    └── system-overview.png
-```
-
----
-
-## 🎨 Excalidraw Visualization Guide
-
-### Recommended Shapes & Styling
-- **🟦 Rounded Rectangles**: API servers, microservices
-- **🗄️ Cylinders**: Databases (PostgreSQL, Redis)
-- **☁️ Cloud Shapes**: External services, containers
-- **📱 Rectangles**: Client applications
-- **⚡ Diamonds**: Decision points, queues
-- **🏷️ Sticky Notes**: Annotations, metrics, callouts
-
-### Color Coding System
-- **🔵 Blue (#4A90E2)**: Core services (API, web app)
-- **🟢 Green (#7ED321)**: Databases and storage
-- **🟡 Yellow (#F5A623)**: Caching and optimization
-- **🔴 Red (#D0021B)**: Security, sandboxing
-- **🟣 Purple (#9013FE)**: External integrations
-- **⚫ Gray (#9B9B9B)**: Infrastructure, load balancers
-
-### Font & Text Styling
-- **Primary Text**: Hand-drawn style, 16px
-- **Labels**: Bold, 12px
-- **Annotations**: Italic, 10px
-- **Metrics**: Monospace font for numbers
-
-### Layout Tips
-- **Vertical Flow**: Top-to-bottom for user journeys
-- **Horizontal Tiers**: Layer architecture (Client → API → Database)
-- **Grouped Components**: Use dotted boxes for related services
-- **Clear Arrows**: Show data flow direction with thick arrows
-- **Spacing**: Generous white space for readability
-
----
 
 <div align="center">
-
-**🌟 Star this repo if it helped with your system design interview prep!**
-
-
 
 </div>

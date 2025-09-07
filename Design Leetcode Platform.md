@@ -1,6 +1,6 @@
 # LeetCode Platform System Design Question
 
-![GitHub stars](https://img.shields.io/github/stars/yourname/leetcode-system-design?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/hemanth1999k/Product-Architecture?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 ![Language](https://img.shields.io/badge/language-System%20Design-orange?style=for-the-badge)
 

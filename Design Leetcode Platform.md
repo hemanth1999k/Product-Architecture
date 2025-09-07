@@ -247,7 +247,7 @@ graph TB
 ### Async Submission Processing
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#4ecdc4', 'primaryTextColor': '#2c3e50', 'primaryBorderColor': '#34495e', 'lineColor': '#34495e', 'fontFamily': 'Virgil, Segoe UI Emoji'}}}%%
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#4ecdc4', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#34495e', 'lineColor': '#34495e', 'fontFamily': 'Virgil, Segoe UI Emoji'}}}%%
 sequenceDiagram
     participant U as User
     participant API as API Server

@@ -1,10 +1,10 @@
-# LeetCode System Design
+# LeetCode Platform System Design Question
 
 ![GitHub stars](https://img.shields.io/github/stars/yourname/leetcode-system-design?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 ![Language](https://img.shields.io/badge/language-System%20Design-orange?style=for-the-badge)
 
-> **A comprehensive system design study guide for building a coding platform like LeetCode**
+> **Let's Design a Platform Like Leetcode**
 
 ## Whats the Problem?
 

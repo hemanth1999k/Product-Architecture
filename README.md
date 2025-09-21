@@ -8,9 +8,9 @@ A personal collection of system design solutions & Fundamental overviews for int
 | Topic                              | Status      |
 |------------------------------------|-------------|
 | 1. Storage                         | Complete |
-| 2. Scalability                     | Incomplete |
-| 3. Networking                      | Incomplete |
-| 4. Latency, Throughput & Performance | Incomplete |
+| 2. Scalability                     | Complete |
+| 3. Networking                      | Complete |
+| 4. Latency, Throughput & Performance | Complete |
 | 5. Fault Tolerance & Redundancy    | Incomplete |
 | 6. CAP Theorem                     | Incomplete |
 

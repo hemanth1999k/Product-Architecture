@@ -1,4 +1,4 @@
-# 📚 Storage Systems for Architecture Interviews
+#  Storage Systems for Architecture Interviews
 
 This guide teaches **storage fundamentals** for system design interviews.  
 We’ll cover relational databases, NoSQL models, schemas, ACID vs BASE, and when to use each.  
@@ -9,7 +9,7 @@ We’ll cover relational databases, NoSQL models, schemas, ACID vs BASE, and whe
 
 - **Structure**: Data stored in **tables** with **rows** (records) and **columns** (attributes).  
 - **Schema**: A **blueprint** of the table — defines what columns exist and what data types they hold.  
-  👉 *Schema enforces rules, ensuring every record follows the same structure.*  
+   *Schema enforces rules, ensuring every record follows the same structure.*  
 
 ### Example Table (Users)
 

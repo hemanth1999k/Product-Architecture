@@ -7,12 +7,12 @@ A personal collection of system design solutions & Fundamental overviews for int
 
 | Topic                              | Status      |
 |------------------------------------|-------------|
-| 1. Storage                         | ⬜ Incomplete |
-| 2. Scalability                     | ⬜ Incomplete |
-| 3. Networking                      | ⬜ Incomplete |
-| 4. Latency, Throughput & Performance | ⬜ Incomplete |
-| 5. Fault Tolerance & Redundancy    | ⬜ Incomplete |
-| 6. CAP Theorem                     | ⬜ Incomplete |
+| 1. Storage                         | Complete |
+| 2. Scalability                     | Incomplete |
+| 3. Networking                      | Incomplete |
+| 4. Latency, Throughput & Performance | Incomplete |
+| 5. Fault Tolerance & Redundancy    | Incomplete |
+| 6. CAP Theorem                     | Incomplete |
 
 ## Questions
 

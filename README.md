@@ -1,6 +1,18 @@
 # System Design - Product Architecture Questions
 
-A personal collection of system design solutions for interview preparation.
+A personal collection of system design solutions & Fundamental overviews for interview preparation.
+
+
+## Fundamentals
+
+| Topic                              | Status      |
+|------------------------------------|-------------|
+| 1. Storage                         | ⬜ Incomplete |
+| 2. Scalability                     | ⬜ Incomplete |
+| 3. Networking                      | ⬜ Incomplete |
+| 4. Latency, Throughput & Performance | ⬜ Incomplete |
+| 5. Fault Tolerance & Redundancy    | ⬜ Incomplete |
+| 6. CAP Theorem                     | ⬜ Incomplete |
 
 ## Questions
 

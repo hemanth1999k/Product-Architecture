@@ -76,6 +76,7 @@ graph TD
   C --> C2[Document: MongoDB]
   C --> C3[Columnar: Cassandra]
   C --> C4[Graph: Neo4j]
+```
 
 ## 2. SQL vs NoSQL at a Glance
 
@@ -141,3 +142,4 @@ flowchart TD
    Q2 -->|No| Q3{Need Cache/Speed?}
    Q3 -->|Yes| Redis[(Key-Value: Redis)]
    Q3 -->|No| Graph[(Graph DB: Neo4j)]
+```

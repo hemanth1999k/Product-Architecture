@@ -11,8 +11,8 @@ A personal collection of system design solutions & Fundamental overviews for int
 | 2. Scalability                     | Complete |
 | 3. Networking                      | Complete |
 | 4. Latency, Throughput & Performance | Complete |
-| 5. Fault Tolerance & Redundancy    | Incomplete |
-| 6. CAP Theorem                     | Incomplete |
+| 5. Fault Tolerance & Redundancy    | Complete |
+| 6. CAP Theorem                     | Complete |
 
 ## Questions
 
